@@ -1,0 +1,481 @@
+/* importe une feuille de style CSS depuis l'URL spécifiée*/
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,900;1,900&display=swap');
+
+
+/* Le sélecteur * cible tous les éléments de la page */
+/* Cette règle réinitialise les marges, rembourrages et définit une boîte de modèle de bordure (border-box) pour tous les éléments */
+
+* {
+    margin: 0; /* Supprime les marges extérieures par défaut */
+    padding: 0; /* Supprime les rembourrages intérieurs par défaut */
+    box-sizing: border-box; /* Utilise la boîte de modèle de bordure pour les dimensions (inclut les bordures et les rembourrages dans la largeur/hauteur) */
+    font-family: 'Roboto', sans-serif; /* Définit la police de caractères par défaut pour tous les éléments */
+}
+
+/* header */
+header {
+    position: fixed; /* Fixe l'élément en haut de la page, indépendamment du défilement */
+    top: 0; /* Place l'élément au sommet de la fenêtre du navigateur */
+    left: 0; /* Place l'élément tout à gauche de la fenêtre du navigateur */
+    width: 100%; /* Définit la largeur à 100% de la largeur de la fenêtre du navigateur */
+    background-color: #fff; /* Définit la couleur d'arrière-plan du header en blanc */
+    display: flex; /* Utilise un modèle d'affichage flex pour les enfants (flex-items) */
+    justify-content: space-between; /* Répartit l'espace entre les enfants à gauche et à droite du header */
+    align-items: center; /* Centre verticalement les enfants du header */
+    padding: 2px 10%; /* Ajoute un rembourrage de 2 pixels en haut et en bas, 10% à gauche et à droite */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Ajoute une ombre à la boîte autour du header */
+    z-index: 100; /* Contrôle l'empilement z pour s'assurer que le header est au-dessus des autres éléments */
+}
+
+.menu_icons {
+    width: 35px; /* Définit la largeur des éléments avec la classe .menu_icons à 35 pixels */
+    cursor: pointer; /* Définit le curseur de la souris pour ces éléments à une main, indiquant qu'ils sont cliquables */
+}
+
+.logo{
+    width: 100px;
+    margin-left: -10% ;
+}
+
+button img{
+    width: 20px;
+    margin-left: 10px;
+    
+}
+
+.menu{
+    display: flex;
+    align-items: center;
+}
+.menu ul{
+    margin-left: 25px;
+    display: flex;
+    list-style: none;
+}
+.menu ul a{
+    margin-left: 10px;
+    text-transform: capitalize;/* la première lettre de chaque mot sera automatiquement mise en majuscule, tandis que les autres lettres resteront en minuscules*/
+    font-size: 15px;
+    color:#000;
+    text-decoration: 0;
+    position: relative;    
+}
+.menu ul a::after {
+    position:absolute;
+    left: 0;
+    bottom: -5px;
+    content:"";
+    width: 0%;
+    height: 2px;
+    background-color: #f7a800;
+    transition: 0.1s ease-out  ; /* Ajoute une transition de 0.1 seconde avec une accélération à la sortie */
+}
+.menu ul a:hover::after{
+    width: 100%;
+}
+
+.header-end {
+    display: flex;
+    align-items: center;
+}
+
+.header-end i {
+    margin-right: 20px;
+}
+
+button {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    border: 0;
+    padding: 8px 15px;
+    background-color: #bb2337;
+    color:#fff;
+    text-transform: uppercase;/* transformera tout le texte à l'intérieur de cet élément en lettres majuscules*/
+    border-radius: 50px;
+    z-index: 1; /* ?????*/
+    transition: 0.2s ease-ou t;
+}
+
+button span{
+    font-family: 'Anton', sans-serif;
+    font-size: 15px;
+    width: 100%;
+    text-align: center;
+}
+
+button:hover {
+    transform: scale(1.06) ;/* l'élément sera agrandi à 106% de sa taille d'origine*/
+}
+
+.fa-crown {
+    position: relative;
+    padding: 20px;
+    
+}
+.login {
+    position: absolute;
+    right: -22px;
+    top: 60px;
+    width: 270px;
+    padding: 20px;
+    display: none;
+    flex-direction: column;
+    align-items: center ;
+    background-color: #fff;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
+}
+.login::after{
+    position: absolute;
+    right: 40px;
+    top: -8px;
+    content: "";
+    height:25px;
+    width:25px;
+    z-index: -3;
+    background-color: #fff;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+    transform: rotate(50deg);
+} 
+.login::before{
+    position: absolute;
+    right: 40px;
+    top: -10px;
+    content: "";
+    height:25px;
+    width:25px;
+    background-color: #fff;
+    transform: rotate(50deg);
+} 
+.fa-crown:hover .login {
+    display:block;
+}
+
+
+.fa-location-dot {
+    position: relative;   
+}
+.location {
+    position: absolute;
+    right: -30px;
+    top: 48.5px;
+    width: 500px;
+    padding: 10px;
+    display: none;
+    align-items: center ;
+    background-color: #fff;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
+}
+.location::after{
+    position: absolute;
+    right: 25px;
+    top: -8px;
+    content: "";
+    height:25px;
+    width:25px;
+    z-index: -3;
+    background-color: #fff;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+    transform: rotate(50deg);
+} 
+.location::before{
+    position: absolute;
+    right: 25px;
+    top: -10px;
+    content: "";
+    height:25px;
+    width:25px;
+    background-color: #fff;
+    transform: rotate(50deg);
+}
+.fa-location-dot:hover .location {
+    display:block;
+}
+
+
+.location input{
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    text-transform: uppercase;
+    font-size: medium;
+    color: #232222;
+}
+
+.location-loup{
+    display: flex;
+}
+
+.fa-search{
+    margin-left: auto;
+}
+
+.login button{
+    width: 100%;
+    background-color:#f7a800;
+    
+}
+.login button:last-child{
+    background-color: transparent;
+    color:#f7a800;
+    border: 1px solid #f7a800 ;
+}
+
+
+hr{
+   border: 0;
+   margin:  30px 0; 
+   background-color: #999;
+   width: 100%;
+   height: 1px;
+}
+
+.login p {
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 25px;
+}
+
+/* home */
+.home {
+    margin-top: 80px;
+    background: url('images/img1.webp');
+    background-position: center;
+    background-size: cover;
+    width:100%;
+    height:calc(100vh - 200px);/*Cette ligne définit la hauteur de l'élément en fonction de la hauteur de la fenêtre du navigateur (100vh) moins 200 pixels.*/
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 20px; /* Cette ligne ajoute un remplissage (padding) de 20 pixels à tous les côtés de l'élément.*/
+}
+
+/* foods */
+
+.foods{
+    margin: 50px 0;
+    padding: 0 10%;
+}
+
+h1{
+    font-size: 40px;
+    text-align: center;
+    text-transform:uppercase;
+    font-family:'Anton', sans-serif;
+}
+
+.foods p {
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 25px;
+}
+
+.foods-list {
+    display: flex;
+    justify-content: space-between;
+}
+
+.foods-list img {
+    box-shadow: 0 0 9px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+h3{
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
+.foods-list .box {
+    transition: 0.5s ease-out;
+    cursor:pointer;
+}
+
+.foods-list .box:hover {
+    transform: scale(1.05);
+}
+
+/* fidelity prog */
+.fidelity_prog {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: url(images/img8.png);
+    background-position: center;
+    background-size: cover;
+    padding: 20px 10%;
+    margin: 35px 0;
+    width: 100%;
+    height: 350px;
+    overflow: hidden;/* Masque tout contenu excédant les dimensions de la boîte */
+}
+
+.fidelity_prog div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.fidelity_prog button{
+    margin-top: 25px;
+    background-color: #f7a800;
+}
+
+.fidelity_prog .div1{
+    width: 300px;
+}
+
+.fidelity_prog .div2{
+    width: 350px;
+    margin-top:  25px;;
+}
+
+.fidelity_prog .div3{
+    width: 410px;
+}
+
+.fidelity_prog img{
+    width: 100%;
+}
+
+/*little food*/
+.little-food{
+    padding: 0 10%;
+}
+
+.little-food img{
+    width: 220px;
+}
+
+.little-food_box{
+    margin: 50px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 280px;
+}
+
+.little-food_box .box{
+    background-color: #fbf5ee;
+    box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    border-radius: 18px;
+    padding: 20px;
+    transition: 0.25s;
+    height: 100%;
+}
+
+.little-food_box .box:hover{
+    transform: scale(0.9);
+}
+
+/*footer*/
+footer{
+    background-color: #000;
+    color: #fff;
+    margin-top: 20px;
+    padding: 10px 2%;
+}
+
+footer p{
+    font-size: 15px;
+}
+
+.icones_social{
+    margin: 25px 0; 
+}
+
+.icones_social i{
+    margin-right: 20px;
+    font-size: 20px;
+}
+
+footer img{
+    margin-top: 20px;
+    border: 1px solid #fff;
+    height: 50px;
+    cursor: pointer;
+}
+
+footer img:last-child{
+margin-left: 10px;
+} 
+
+footer .div2{ 
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;/*aligner les éléments à l'intérieur de .div2 en haut de la zone, ce qui garantira que les <h3> sont alignés verticalement au même niveau*/
+}
+
+footer .div2 h3{
+    margin-bottom: 10px;
+    
+}
+
+footer .div2 ul {
+    display: flex;
+    flex-direction: column;
+}
+
+footer .div2 ul a{
+    font-size: 13px;
+    color: #fff;
+    text-decoration: 0;
+    margin-bottom: 5px;
+    transition: 0.5s;
+}
+
+footer .div2 ul a:hover{
+    letter-spacing: 0.5px;
+}
+
+footer .div3{
+    text-align: center;
+}
+
+footer .div3 p:first-child {
+    font-size: 13px;
+}
+
+footer .div3 p:last-child {
+    font-size: 12px;
+    color: #999;
+    margin-top: 10px;
+}
+
+
+/* Ajoutez ces styles pour les écrans de petite taille (par exemple, smartphones) */
+@media screen and (max-width: 1163px) {
+   
+    
+    body {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        margin: 0;
+        width: 130%;
+    }
+
+    footer{
+        width: 100%;
+    }
+    
+
+    footer .div1{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+    footer .div2 {
+        display: none;
+    }
+
+    .little-food_box{
+        justify-content: space-between;
+    }
+
+}
